@@ -107,17 +107,24 @@ public class WhileTest {
         System.out.println("产生了" + i + "个不能被30整除的数");
     }
 
-    @Test
-    public void maxUnmTest(){
 //        练习2：编写一个方法 `int getMaxNumRem7(int n1, int n2)` 找出 `0 ~ n2` 范围内除以 n1 余 7 的最大的数，找到则返回该数，如果找不到则返回 -1。
-//        int getMaxNumRem7(int n1, int n2) {
-//            for (int n = n2; n >= 0; n--) {
-//                if (n % n1 == 7) {
-//                    return n;
-//                }
-//            }
-//            return -1;
+
+    int getMaxNumRem7(int n1, int n2) {
+        for (int n = n2; n >= 0; n--) {
+            if (n % n1 == 7) {
+                return n;
+            }
         }
+        return -1;
+    }
+
+
+    @Test
+    public void returnTest(){
+        int i=getMaxNumRem7(34,214352);
+        System.out.println(i);
+    }
+
 
         @Test
     public void totalTest(){
