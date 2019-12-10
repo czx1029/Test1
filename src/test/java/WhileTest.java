@@ -125,18 +125,46 @@ public class WhileTest {
         System.out.println(i);
     }
 
-
+//  练习3：找出 `0 ~ 100` 范围内能被7整除的数，并计算它们累计相加的结果。
     @Test
     public void totalTest(){
-//            练习3：找出 `0 ~ 100` 范围内能被7整除的数，并计算它们累计相加的结果。
         int total=0;
-            for (int n = 0; n < 100; n++) {
-                if (n % 7 != 0) {
-                    continue;
-                }
-                total += n;
-                System.out.println(n + "能被7整除，累计结果：" + total);
+        for (int n = 0; n < 100; n++) {
+            if (n % 7 != 0) {
+                continue;
             }
+            total += n;
+            System.out.println(n + "能被7整除，累计结果：" + total);
+        }
             System.out.println("0 ~ 100范围内能被7整除的数累计相加结果：" + total);
+    }
+
+    @Test
+    public void Test1(){
+        int total=0;
+        int n=0;
+        for (int i=0;i<100;i++){
+            if (i%7==0){
+                total+=i;
+                n++;
+                System.out.println(i+"可以被7整除");
+            }
+        }
+        System.out.println("`0 ~ 100` 范围内能被7整除的数有"+n+"个，它们累计相加的结果为"+total);
+    }
+
+    @Test
+    public void Test2(){
+        int total=0;
+        int n=0;
+        for (int i=0;i<100;i++){
+            if (i%7!=0){
+                continue;
+            }
+            total+=i;
+            n++;
+            System.out.println(i+"可以被7整除");
+        }
+        System.out.println("`0 ~ 100` 范围内能被7整除的数有"+n+"个，它们累计相加的结果为"+total);
     }
 }
