@@ -24,6 +24,7 @@ public class WhileTest {
         }
         System.out.println("产生了" + times + "个不能被30整除的数");
     }
+
     @Test
     public void doWhileTest(){
 //        练习：和 `while` 部分的练习一样，随机生成一个 `0 ～ 1000` 范围的整数，如果不能被30整除，则打印出数字，
@@ -45,6 +46,7 @@ public class WhileTest {
         }while (isContinue);
         System.out.println("产生了" + times + "个不能被30整除的数");
     }
+
     @Test
     public void forTest(){
 //        练习：打印 `0 ~ 100` 范围内的单数并计算范围内单数的总个数。
@@ -57,6 +59,7 @@ public class WhileTest {
         }
         System.out.println("0 ~ 100之间的单数总个数是：" + total  + "个");
     }
+
     @Test
     public void switchTest(){
 //        |数字指令    |执行命令
@@ -107,8 +110,7 @@ public class WhileTest {
         System.out.println("产生了" + i + "个不能被30整除的数");
     }
 
-//        练习2：编写一个方法 `int getMaxNumRem7(int n1, int n2)` 找出 `0 ~ n2` 范围内除以 n1 余 7 的最大的数，找到则返回该数，如果找不到则返回 -1。
-
+//  练习2：编写一个方法 `int getMaxNumRem7(int n1, int n2)` 找出 `0 ~ n2` 范围内除以 n1 余 7 的最大的数，找到则返回该数，如果找不到则返回 -1。
     int getMaxNumRem7(int n1, int n2) {
         for (int n = n2; n >= 0; n--) {
             if (n % n1 == 7) {
@@ -117,8 +119,6 @@ public class WhileTest {
         }
         return -1;
     }
-
-
     @Test
     public void returnTest(){
         int i=getMaxNumRem7(34,214352);
@@ -126,7 +126,7 @@ public class WhileTest {
     }
 
 
-        @Test
+    @Test
     public void totalTest(){
 //            练习3：找出 `0 ~ 100` 范围内能被7整除的数，并计算它们累计相加的结果。
         int total=0;
