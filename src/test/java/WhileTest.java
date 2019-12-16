@@ -10,7 +10,7 @@ public class WhileTest {
         boolean isContinue=true;
         int times=0;
         while (isContinue){
-            int r=new Random().nextInt(10);
+            int r=new Random().nextInt(1000);
             if(r%30==0){
                 System.out.println("随机数：" + r + "能被30整除，不在执行循环");
                 isContinue=false;
