@@ -106,5 +106,18 @@ public class ArrayTest {
         System.arraycopy(arr2, arr2.length - 3, arr1, arr1.length - 3, 3);
         System.out.println("arr1 = " + Arrays.toString(arr1));
     }
-    
+
+    @Test
+    public void testFill(){
+//        使用工具类提供的方法 `Arrays.fill` 可以对数组全部或指定范围内的元素赋值为指定的值。
+//        示例：定义一个大小为 10 的 int 数组，并将数组全部初始化为指定的值 5，打印数组；然后将数组后 3 为赋值为 3，再次打印数组。
+        int arr[]=new int [10];
+        Arrays.fill(arr,5);
+        System.out.println(Arrays.toString(arr));
+
+        Arrays.fill(arr,arr.length-3,arr.length,3);
+        System.out.println(Arrays.toString(arr));
+    }
+
+
 }
