@@ -3,6 +3,7 @@ package com.Exercise.array;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class ArrayTest {
 
@@ -119,5 +120,16 @@ public class ArrayTest {
         System.out.println(Arrays.toString(arr));
     }
 
-
+    @Test
+    public void testSort(){
+//        可以使用 Arrays.sort 方法对数组进行排序。
+//        示例：定义一个大小为 100 的 int 数组，随机给每一位赋值一个 `0 ~ 100` 之间的数值，然后对该数组进行排序并打印排序结果。
+        int arr[]=new int [100];
+        for (int i=0;i<100;i++){
+            arr[i]=new Random().nextInt(100);
+        }
+        System.out.println("排序前 "+Arrays.toString(arr));
+        Arrays.sort(arr);
+        System.out.println("排序后 "+Arrays.toString(arr));
+    }
 }
