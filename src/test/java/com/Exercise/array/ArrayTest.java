@@ -170,9 +170,12 @@ public class ArrayTest {
 //    所以返回 [0, 1]
 
     public int[] twoSum(int[] nums, int target) {
+        int times=0;
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = i + 1; j < nums.length; j++) {
+                times++;
                 if (nums[i] + nums[j] == target) {
+                    System.out.println("循环了"+times+"次");
                     return new int[] {i, j};
                 }
             }
@@ -188,14 +191,17 @@ public class ArrayTest {
         for (int i = 0; i < nums.length - 1; i++) {
             if(nums[i]>=target){
                 System.out.println("第一个数"+nums[i]+"已经大于"+target);
+                System.out.println("循环了"+times+"次");
                 return null;
             }
             for (int j = i + 1; j < nums.length; j++) {
                 times++;
                 if (nums[j]>target){
+                    System.out.println("循环了"+times+"次");
                     break;
                 }
                 if (nums[i] + nums[j] == target) {
+                    System.out.println("循环了"+times+"次");
                     return new int[] {i, j};
                 }
             }
@@ -210,6 +216,7 @@ public class ArrayTest {
         int[] intArray = {20,2,3, 7, 11, 15};
         int target = 9;
         System.out.println(Arrays.toString(twoSum(intArray,target)));
+        System.out.println("===================================");
         System.out.println(Arrays.toString(twoSum2(intArray,target)));
     }
 }
