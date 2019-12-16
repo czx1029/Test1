@@ -2,6 +2,7 @@ package com.Exercise.array;
 
 import org.testng.annotations.Test;
 
+import java.time.temporal.ValueRange;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -131,5 +132,84 @@ public class ArrayTest {
         System.out.println("排序前 "+Arrays.toString(arr));
         Arrays.sort(arr);
         System.out.println("排序后 "+Arrays.toString(arr));
+    }
+
+    @Test
+    public void testDuoWeiShuZu(){
+//        前边介绍出现的数组，都是一维数组，Java 实际上没有多维数组，只有一维数组。多维数组可以被理解为“数组的数组”。多维数组的同一个维可以有不同的长度，因此也可以称为不规则数组。声明时使用多个 [] 标识来声明。
+//        示例：定义一个二维数组，第一维表示用户，第二维表示用户的具体信息（1. 编码, 2. 姓名, 3.性别, 4.年龄）。定义赋值并打印。
+        String[][] users = new String[2][];
+        users[0] = new String[4];
+        users[0][0] = "001";
+        users[0][1] = "张三";
+        users[0][2] = "女";
+        users[0][3] = "25";
+
+        users[1] = new String[4];
+        users[1][0] = "002";
+        users[1][1] = "李四";
+        users[1][2] = "男";
+        users[1][3] = "30";
+
+        System.out.println(Arrays.toString(users));
+
+        for (String[] user : users) {
+            System.out.println(Arrays.toString(user));
+        }
+
+        Arrays.asList(users).forEach(user -> System.out.println(Arrays.toString(user)));
+    }
+
+
+
+//    给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+//    你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
+//    示例:
+//    给定 nums = [2, 7, 11, 15], target = 9
+//    因为 nums[0] + nums[1] = 2 + 7 = 9
+//    所以返回 [0, 1]
+
+    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[] {i, j};
+                }
+            }
+        }
+        return null;
+    }
+
+    public int[] twoSum2(int[] nums, int target) {
+        System.out.println("传入数组"+Arrays.toString(nums));
+        Arrays.sort(nums);
+        System.out.println("排序数组"+Arrays.toString(nums));
+        int times=0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if(nums[i]>=target){
+                System.out.println("第一个数"+nums[i]+"已经大于"+target);
+                return null;
+            }
+            for (int j = i + 1; j < nums.length; j++) {
+                times++;
+                if (nums[j]>target){
+                    break;
+                }
+                if (nums[i] + nums[j] == target) {
+                    return new int[] {i, j};
+                }
+            }
+        }
+        return null;
+    }
+
+
+
+    @Test
+    public void tsetTwoSum(){
+        int[] intArray = {20,2,3, 7, 11, 15};
+        int target = 9;
+        System.out.println(Arrays.toString(twoSum(intArray,target)));
+        System.out.println(Arrays.toString(twoSum2(intArray,target)));
     }
 }
