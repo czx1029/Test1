@@ -13,8 +13,6 @@ public class MyInvocationHandler implements InvocationHandler {
     public Object bind(Object obj){
         this.obj=obj;
         return Proxy.newProxyInstance(MyInvocationHandler.class.getClassLoader(),this.obj.getClass().getInterfaces(),this);
-
-
     }
 
     @Override
